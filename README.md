@@ -8,7 +8,11 @@ git status = check where you are at
 
 git commit -m "your_detailed_message"
 
-git push origin your_branch_name = push code to branch 
+git push origin your_branch_name = push code to branch
+
+(For pushing code)
+_______________________________________________________________
+
 
 git clone your_ssh_adresss_here = pulls code from git to computor 
 

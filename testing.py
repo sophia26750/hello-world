@@ -2,26 +2,27 @@ import random
 
 turn = ["Green", "Red", "Blue", "Yellow"]
 line = ''
-beginning_player = input('What color is going first? ')
+beginning_player = ""
 current_player = int()
 
-while beginning_player == line:
-    beginning_player = input('Please enter a color. ')
+while beginning_player != 'green' and beginning_player != 'red' and beginning_player != 'yellow' and beginning_player != 'blue':
+    beginning_player = input('Please enter either Yellow, Green, Red, or Blue: ')
+    beginning_player = beginning_player.lower()
 
-if beginning_player == 'Green':
+if beginning_player == 'green':
     current_player = 0
-if beginning_player == 'Red':
+if beginning_player == 'red':
     current_player = 1
-if beginning_player == 'Blue':
+if beginning_player == 'blue':
     current_player = 2
-if beginning_player == 'Yellow':
+if beginning_player == 'yellow':
     current_player = 3
 
 
 number_of_dice = 2
 want_to_quit = ''
 doubles = 2
-snake_eye_count = 0
+snake_eye_count = 2
 line = ''
 underline = '________________________________________________'
 snake_eye_line = '***'
@@ -33,8 +34,8 @@ while not want_to_quit:
     input(f'{turn[next_player]} you\'re up! Please press enter to roll. ')
     print(line)
     print(underline)
-    dice_value = random.randint(5, 5)
-    dice_value_2 = random.randint(5, 5)
+    dice_value = random.randint(1, 6)
+    dice_value_2 = random.randint(1, 6)
     print(f'You rolled a {dice_value} and a {dice_value_2}.')
 
     if dice_value_2 == 1 and dice_value == 1:
