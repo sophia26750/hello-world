@@ -8,7 +8,3 @@ total_bus_cost = rode_bus * cost_for_ride
 format_float = "{:.2f}".format(total_bus_cost)
 
 print('You rode the bus ' + str(rode_bus) + ' times last month. One bus ride costs $' + str(cost_for_ride) + '. Your total cost was $' + str(format_float))
-
-
-
-
