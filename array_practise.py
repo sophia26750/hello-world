@@ -1,40 +1,39 @@
 import random
 
-turn = ["Green", "Red", "Blue", "Yellow"]
-line = ''
-beginning_player = input('What color is going first? ')
-current_player = int()
-
-while beginning_player == line:
-    beginning_player = input('Please enter a color. ')
-
-if beginning_player == 'Green':
-    current_player = 0
-if beginning_player == 'Red':
-    current_player = 1
-if beginning_player == 'Blue':
-    current_player = 2
-if beginning_player == 'Yellow':
-    current_player = 3
-
-
 number_of_dice = 2
 want_to_quit = ''
-doubles = 2
+doubles = 0
 snake_eye_count = 0
 line = ''
 underline = '________________________________________________'
 snake_eye_line = '***'
-#     player_list = ["Yellow, Green, Red, Blue"]
 print(line)
-next_player = current_player
+
+turn = ["Green", "Red", "Blue", "Yellow"]
+user_input = input('What color is going first? ')
+
+while user_input == line:
+    user_input = input('Please enter a color. ')
+first_move = int()
+
+if user_input == line:
+    user_input = input('What color is going first? ')
+if user_input == 'Green':
+    first_move = 0
+if user_input == 'Red':
+    first_move = 1
+if user_input == 'Blue':
+    first_move = 2
+if user_input == 'Yellow':
+    first_move = 3
+
 
 while not want_to_quit:
-    input(f'{turn[next_player]} you\'re up! Please press enter to roll. ')
     print(line)
+    want_to_quit = input('Please press enter to roll your two dices. ')
     print(underline)
-    dice_value = random.randint(5, 5)
-    dice_value_2 = random.randint(5, 5)
+    dice_value = random.randint(1, 1)
+    dice_value_2 = random.randint(1, 1)
     print(f'You rolled a {dice_value} and a {dice_value_2}.')
 
     if dice_value_2 == 1 and dice_value == 1:
@@ -44,7 +43,7 @@ while not want_to_quit:
         print(underline)
 
         if snake_eye_count == 3:
-            print(f'Player {turn[next_player]}! YOU AUTOMATICALLY WIN!!!')
+            print('YOU AUTOMATICALLY WIN!!!')
             print(underline)
             doubles = 0
             quit('Game Over!')
@@ -64,10 +63,6 @@ while not want_to_quit:
             print(underline)
             print(line)
             doubles = 0
-            next_player = next_player + 1
-            if next_player > 3:
-                next_player = 0
-            print('******************')
 
         else:
             print(f'You rolled {doubles} doubles. You get another roll. ')
@@ -75,11 +70,11 @@ while not want_to_quit:
             print(line)
 
     else:
+        print('Next player\'s turn')
         print(underline)
         print(line)
         doubles = 0
         snake_eye_count = 0
-        next_player = next_player + 1
-        if next_player > 3:
-            next_player = 0
-        print('******************')
+
+
+
