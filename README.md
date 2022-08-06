@@ -22,6 +22,7 @@ _______________________________________________________________
 
 `git checkout branch_name` = switch to existing branch 
 
+`cd ..` = go back in directory
 
 `cd` = change directory
 

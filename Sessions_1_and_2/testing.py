@@ -21,8 +21,8 @@ if beginning_player == 'yellow':
 
 number_of_dice = 2
 want_to_quit = ''
-doubles = 2
-snake_eye_count = 2
+doubles = 0
+snake_eye_count = 0
 line = ''
 underline = '________________________________________________'
 snake_eye_line = '***'
